@@ -1,14 +1,20 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+// Generador para poder usar Prisma en tu código
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider = "prisma-client-js"
 }
 
+// Conexión a tu base de datos MySQL
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
+ 
+}
+
+// --- TUS TABLAS DE DATOS ---
+
+// Tabla para los servicios de tu peluquería
+model Servicio {
+  id          Int      @id @default(autoincrement())
+  nombre      String   
+  descripcion String?  
+  precio      Float    
 }
